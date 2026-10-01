@@ -4,17 +4,11 @@ import { useScrollFade } from '../../../hooks/useScrollFade'
 import './PhysicsHero.css'
 
 /**
- * Vídeo cinematográfico específico del módulo Física, aportado por el
- * usuario. El nombre de archivo real incluye espacios y acentos (no se
- * renombra), así que se codifica con `encodeURI` para usarlo como `src`.
- * macOS guarda el nombre en Unicode NFD (la "ó" como "o" + acento
- * combinado): sin `.normalize('NFD')` aquí, el editor guarda la cadena en
- * NFC y la petición no encuentra el archivo (Vite cae al `index.html` de
- * la SPA en vez de servir el vídeo). Si aun así no cargara, `onError`
- * retira el `<video>` y el fondo degradado sigue funcionando: nunca se
- * sustituye por una escena generada.
+ * Vídeo cinematográfico específico del módulo Física. Si no cargara,
+ * `onError` retira el `<video>` y el fondo degradado sigue funcionando:
+ * nunca se sustituye por una escena generada.
  */
-const AMBIENT_VIDEO_SRC = encodeURI('/Grabación de pantalla 2026-09-20 a las 22.42.01.mov'.normalize('NFD'))
+const AMBIENT_VIDEO_SRC = '/physics-bg.mp4'
 
 export function PhysicsHero() {
   const { ref, opacity } = useScrollFade<HTMLElement>()

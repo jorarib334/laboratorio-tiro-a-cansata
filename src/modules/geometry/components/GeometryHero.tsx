@@ -4,14 +4,11 @@ import { useScrollFade } from '../../../hooks/useScrollFade'
 import './GeometryHero.css'
 
 /**
- * Vídeo cinematográfico específico del módulo Geometría, aportado por el
- * usuario. Mismo tratamiento que el de Física: el nombre real incluye
- * espacios y acentos (no se renombra) y macOS lo guarda en Unicode NFD, así
- * que se normaliza antes de `encodeURI`. Si no cargara, `onError` retira
- * el `<video>` y el fondo degradado sigue funcionando — nunca se sustituye
- * por una escena generada.
+ * Vídeo cinematográfico específico del módulo Geometría. Si no cargara,
+ * `onError` retira el `<video>` y el fondo degradado sigue funcionando —
+ * nunca se sustituye por una escena generada.
  */
-const CINEMATIC_VIDEO_SRC = encodeURI('/Grabación de pantalla 2026-09-20 a las 23.50.42.mov'.normalize('NFD'))
+const CINEMATIC_VIDEO_SRC = '/geometry-bg.mp4'
 
 export function GeometryHero() {
   const { ref, opacity } = useScrollFade<HTMLElement>()

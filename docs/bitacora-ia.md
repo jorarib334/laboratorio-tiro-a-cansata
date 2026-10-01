@@ -18,6 +18,18 @@ Cada entrada se añade con el skill `/bitacora` y sigue este formato:
 
 ---
 
+## [2026-10-01] Vídeos de fondo rotos en producción: contenedor QuickTime disfrazado de .mp4
+
+**Contexto**: tras desplegar en Vercel, los vídeos de fondo de Física, Geometría y Representación Técnica no se reproducían en producción, aunque sí en local/Safari; el vídeo del hero de la portada sí funcionaba. El usuario sospechaba que era un problema de formato `.mov` vs `.mp4`.
+
+**Alternativas consideradas**: antes de aceptar la hipótesis del usuario se verificó con `file` y `mdls`: el códec de los tres vídeos ya era H.264 (correcto), pero el contenedor real era QuickTime (`.mov`) simplemente renombrado a `.mp4` en algún momento previo, sin recodificar — a diferencia del hero, que sí era un MP4 ISO estándar. Para corregirlo se consideró recodificar con un preset estándar de `avconvert` (p. ej. `Preset1280x720`, herramienta nativa de macOS ya que no hay `ffmpeg`/Homebrew en este entorno) frente a remuxar sin recodificar con `PresetPassthrough`. Se descartó recodificar: habría sido más lento y arriesgaba alterar la calidad visual sin necesidad, ya que el códec nunca fue el problema, solo el contenedor.
+
+**Decisión**: remuxar los tres vídeos con `avconvert -p PresetPassthrough` (reempaqueta el flujo H.264 existente en un contenedor MP4 ISO estándar, sin recodificar) y sobrescribir `public/physics-bg.mp4`, `public/geometry-bg.mp4` y `public/technical-bg.mp4`. Se corrigieron además los tres componentes Hero, que todavía referenciaban los nombres de archivo antiguos (con espacios y acentos, terminados en `.mov`) que ya no existían en `public/` — ahora apuntan directamente a `/physics-bg.mp4`, `/geometry-bg.mp4` y `/technical-bg.mp4`, sin necesidad de `encodeURI`/normalización NFD.
+
+**Justificación**: verificado con `file` que los tres archivos resultantes son `ISO Media, MP4 v2` (contenedor correcto) y que su tamaño es casi idéntico al original (remux sin pérdida de calidad ni recodificación). Confirmado mediante el build de producción (`vite preview`) que el elemento `<video>` de las tres rutas alcanza `readyState: 4` y reproduce sin errores, con la misma duración/resolución que el archivo original; el vídeo del hero de portada se verificó intacto. `tsc`, `oxlint` y `build` limpios.
+
+---
+
 ## [2026-10-01] Módulo "Sobre el proyecto" a partir de la memoria real
 
 **Contexto**: CLAUDE.md dejaba explícitamente pendiente la sección "Sobre mí/Sobre el proyecto" hasta tener "la versión final de la memoria". El usuario aportó esa memoria (`claude.pdf`, el trabajo de investigación real, con título, resumen, pregunta de investigación y objetivos ya redactados) y pidió construir esa sección a partir de ella, incluir su nombre y el año, y reutilizar el estilo del titular de la portada.

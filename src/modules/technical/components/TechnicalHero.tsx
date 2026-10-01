@@ -4,14 +4,11 @@ import { useScrollFade } from '../../../hooks/useScrollFade'
 import './TechnicalHero.css'
 
 /**
- * Vídeo cinematográfico específico del módulo Representación Técnica,
- * aportado por el usuario. Mismo tratamiento que Física/Geometría: el
- * nombre real incluye espacios y acentos (no se renombra) y macOS lo
- * guarda en Unicode NFD, así que se normaliza antes de `encodeURI`. Si no
- * cargara, `onError` retira el `<video>` y el fondo degradado sigue
+ * Vídeo cinematográfico específico del módulo Representación Técnica. Si
+ * no cargara, `onError` retira el `<video>` y el fondo degradado sigue
  * funcionando — nunca se sustituye por una escena generada.
  */
-const CINEMATIC_VIDEO_SRC = encodeURI('/Grabación de pantalla 2026-09-21 a las 23.02.32.mov'.normalize('NFD'))
+const CINEMATIC_VIDEO_SRC = '/technical-bg.mp4'
 
 export function TechnicalHero() {
   const { ref, opacity } = useScrollFade<HTMLElement>()
