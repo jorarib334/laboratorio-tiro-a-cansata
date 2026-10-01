@@ -31,7 +31,7 @@ export function Navbar() {
         </svg>
         <span className="navbar__brand-text">
           <span className="navbar__brand-title">Laboratorio de tiro a canasta</span>
-          <span className="navbar__brand-subtitle">Laboratorio virtual</span>
+          <span className="navbar__brand-subtitle">Laboratorio virtual · Jorge Ardura</span>
         </span>
       </a>
 
