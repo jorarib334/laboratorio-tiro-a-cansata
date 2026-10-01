@@ -1,0 +1,7 @@
+.ai-query-controls {
+  /* Recolorea `ParameterControls.css` (pensado para Física) a la identidad de la IA sin tocar ni duplicar ese archivo. */
+  --color-physics: var(--color-ai);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 1.1rem;
+}

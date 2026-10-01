@@ -1,0 +1,53 @@
+.next-module-button__row {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--color-line);
+  width: 100%;
+}
+
+.next-module-button {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  padding: 0.65rem 1.3rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, var(--color-line-strong));
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  text-decoration: none;
+  transition: background 200ms ease, transform 200ms ease, border-color 200ms ease;
+}
+
+.next-module-button:hover {
+  background: color-mix(in srgb, var(--accent) 24%, transparent);
+  border-color: var(--accent);
+}
+
+.next-module-button__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-chalk-dim);
+}
+
+.next-module-button__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-chalk);
+}
+
+.next-module-button__arrow {
+  color: var(--accent);
+  transition: transform 200ms ease;
+}
+
+.next-module-button:hover .next-module-button__arrow {
+  transform: translateX(4px);
+}

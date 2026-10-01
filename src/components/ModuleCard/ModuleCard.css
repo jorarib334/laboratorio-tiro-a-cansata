@@ -1,0 +1,219 @@
+.module-card {
+  --accent: var(--color-chalk-dim);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 600ms ease-out var(--reveal-delay, 0ms),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+  min-height: 100%;
+}
+
+.module-card--visible {
+  opacity: 1;
+  transform: none;
+}
+
+.module-card__body {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  height: 100%;
+  padding: 1.75rem 1.5rem;
+  background: linear-gradient(165deg, var(--color-wood), color-mix(in srgb, var(--color-wood) 70%, black));
+  border: 1px solid var(--color-line);
+  border-top: 3px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition:
+    transform 260ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 260ms ease,
+    border-color 260ms ease;
+}
+
+.module-card--visible:hover .module-card__body {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px -20px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+/* La "ventana" del módulo: cada tarjeta asoma a una escena propia del
+   laboratorio, no a un icono suelto. */
+.module-card__window {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  margin: -0.15rem -0.15rem 0.9rem;
+  border-radius: 4px;
+  overflow: hidden;
+  background:
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px),
+    linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, var(--color-ink)), var(--color-ink) 75%);
+  background-size:
+    18px 18px,
+    18px 18px,
+    100% 100%;
+  border: 1px solid var(--color-line);
+  transition: border-color 260ms ease;
+}
+
+.module-card--visible:hover .module-card__window {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.module-graphic {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.module-graphic__axis {
+  stroke: var(--color-line-strong);
+  stroke-width: 1;
+  fill: none;
+}
+
+.module-graphic__stroke {
+  stroke: var(--accent);
+  stroke-width: 1.75;
+  fill: none;
+  opacity: 0.85;
+}
+
+.module-graphic__thin {
+  stroke: var(--accent);
+  stroke-width: 1;
+  fill: none;
+  opacity: 0.55;
+}
+
+.module-graphic__vector {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.module-graphic__dot {
+  fill: var(--accent);
+}
+
+.module-graphic__node {
+  fill: var(--color-ink);
+  stroke: var(--accent);
+  stroke-width: 1.75;
+}
+
+.module-graphic__hover-draw {
+  transition: opacity 320ms ease, filter 320ms ease;
+  opacity: 0.7;
+}
+
+.module-card--visible:hover .module-graphic__hover-draw {
+  opacity: 1;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--accent) 70%, transparent));
+}
+
+.module-card__index {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-chalk-dim);
+  z-index: 1;
+}
+
+.module-card__icon-badge {
+  position: absolute;
+  z-index: 1;
+  bottom: 0.6rem;
+  left: 0.7rem;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--color-ink) 55%, transparent);
+  backdrop-filter: blur(2px);
+  border: 1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.module-card--visible:hover .module-card__icon-badge {
+  transform: scale(1.08) rotate(-6deg);
+}
+
+.module-card__icon {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.module-card__name {
+  position: relative;
+  z-index: 1;
+  font-size: 1.35rem;
+  font-weight: 500;
+}
+
+.module-card__summary {
+  position: relative;
+  z-index: 1;
+  color: var(--color-chalk);
+  font-weight: 500;
+}
+
+.module-card__detail {
+  position: relative;
+  z-index: 1;
+  color: var(--color-chalk-dim);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.module-card__footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.module-card__status {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.module-card__status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.module-card__arrow {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: transform 260ms ease, background 260ms ease;
+}
+
+.module-card--visible:hover .module-card__arrow {
+  transform: translateX(3px);
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}

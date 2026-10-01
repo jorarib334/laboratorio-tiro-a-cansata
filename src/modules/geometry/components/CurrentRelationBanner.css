@@ -1,0 +1,40 @@
+.current-relation-banner {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.current-relation-banner__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-chalk-dim);
+}
+
+.current-relation-banner__eyebrow::after {
+  content: '·';
+  margin-left: 0.5rem;
+  color: var(--color-line-strong);
+}
+
+.current-relation-banner__name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-geometry);
+  animation: current-relation-in 280ms ease-out;
+}
+
+@keyframes current-relation-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

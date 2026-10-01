@@ -1,0 +1,108 @@
+.ai-configuration {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ai-configuration__note {
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+  max-width: 68ch;
+}
+
+.ai-configuration__verdict {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  align-self: flex-start;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--verdict-color) 55%, var(--color-line-strong));
+  background: color-mix(in srgb, var(--verdict-color) 14%, transparent);
+}
+
+.ai-configuration__verdict-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--verdict-color);
+  box-shadow: 0 0 8px color-mix(in srgb, var(--verdict-color) 70%, transparent);
+}
+
+.ai-configuration__verdict-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-chalk);
+}
+
+.ai-configuration__verdict-confidence {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-chalk-dim);
+}
+
+.ai-configuration__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.2rem;
+  margin: 0;
+}
+
+.ai-configuration__stats dt {
+  font-size: 0.78rem;
+  color: var(--color-chalk-dim);
+}
+
+.ai-configuration__stats dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--color-ai);
+}
+
+.ai-configuration__relevant {
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+  max-width: 68ch;
+}
+
+.ai-configuration__relevant strong {
+  color: var(--color-chalk);
+}
+
+.ai-configuration__explain-lede {
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+}
+
+.ai-configuration__neighbors {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.ai-configuration__neighbors th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--color-chalk-dim);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.ai-configuration__neighbors td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--color-line);
+  font-family: var(--font-mono);
+  color: var(--color-chalk);
+}
+
+.ai-configuration__cell-favorable {
+  color: var(--color-simulator);
+}
+
+.ai-configuration__cell-unfavorable {
+  color: var(--color-ball-dim);
+}

@@ -1,0 +1,16 @@
+.results-page {
+  min-height: 100svh;
+  background: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.results-page__content {
+  padding: 3rem clamp(1.25rem, 4vw, 3rem) 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  max-width: var(--content-max);
+  width: 100%;
+  margin: 0 auto;
+}

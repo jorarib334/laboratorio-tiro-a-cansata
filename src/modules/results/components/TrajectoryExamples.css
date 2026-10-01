@@ -1,0 +1,105 @@
+.trajectory-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.trajectory-examples__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.trajectory-examples__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-chalk-dim);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.trajectory-examples__tab:hover {
+  color: var(--color-chalk);
+}
+
+.trajectory-examples__tab--active {
+  border-color: var(--color-simulator);
+  color: var(--color-chalk);
+  background: color-mix(in srgb, var(--color-simulator) 14%, transparent);
+}
+
+.trajectory-examples__tab-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.trajectory-examples__detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(220px, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .trajectory-examples__detail {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trajectory-examples__scene {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-void) 55%, transparent);
+}
+
+.trajectory-examples__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.trajectory-examples__description {
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+}
+
+.trajectory-examples__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.trajectory-examples__metrics > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.trajectory-examples__metrics dt {
+  font-size: 0.78rem;
+  color: var(--color-chalk-dim);
+}
+
+.trajectory-examples__metrics dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-simulator);
+}
+
+.trajectory-examples__empty {
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+}

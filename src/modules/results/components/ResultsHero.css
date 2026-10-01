@@ -1,0 +1,87 @@
+.results-hero {
+  position: relative;
+  width: 100%;
+  min-height: 56svh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: var(--color-void);
+  transition: opacity 80ms linear;
+}
+
+.results-hero__background {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(55% 65% at 24% 15%, color-mix(in srgb, var(--color-simulator) 20%, transparent), transparent 70%),
+    radial-gradient(45% 55% at 82% 10%, color-mix(in srgb, var(--color-ai) 16%, transparent), transparent 70%),
+    linear-gradient(180deg, var(--color-void) 0%, var(--color-ink) 100%);
+}
+
+.results-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: var(--content-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem clamp(1.25rem, 4vw, 3rem) 3.5rem;
+}
+
+.results-hero__back {
+  align-self: flex-start;
+  margin-bottom: 1.75rem;
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+  text-decoration: none;
+}
+
+.results-hero__back:hover {
+  color: var(--color-chalk);
+}
+
+.results-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-simulator);
+}
+
+.results-hero__title {
+  font-size: clamp(3.5rem, 10vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  background: linear-gradient(100deg, var(--color-simulator) 0%, var(--color-chalk) 45%, var(--color-ai) 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 32px color-mix(in srgb, var(--color-simulator) 30%, transparent));
+}
+
+.results-hero__subtitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  color: var(--color-chalk-dim);
+  font-style: italic;
+}
+
+.results-hero__lead {
+  max-width: 56ch;
+  margin-top: 0.75rem;
+  color: var(--color-chalk-dim);
+  line-height: 1.6;
+}
+
+.results-hero__hint {
+  margin-top: 1.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--color-chalk-dim);
+}

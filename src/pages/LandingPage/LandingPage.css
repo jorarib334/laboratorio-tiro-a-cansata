@@ -1,0 +1,82 @@
+.landing {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+main {
+  flex: 1;
+}
+
+.approaches {
+  position: relative;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem) clamp(4rem, 8vw, 6rem);
+  border-top: 1px solid var(--color-line);
+  padding-top: clamp(3rem, 6vw, 4rem);
+}
+
+/* Un módulo, un color: los cinco tonos de acento convergen suavemente
+   detrás del titular, como anticipo de la rejilla de tarjetas de abajo. */
+.approaches::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22rem;
+  background:
+    radial-gradient(32% 60% at 6% 0%, color-mix(in srgb, var(--color-physics) 12%, transparent), transparent 70%),
+    radial-gradient(32% 60% at 30% 0%, color-mix(in srgb, var(--color-geometry) 12%, transparent), transparent 70%),
+    radial-gradient(32% 60% at 54% 0%, color-mix(in srgb, var(--color-technical) 12%, transparent), transparent 70%),
+    radial-gradient(32% 60% at 76% 0%, color-mix(in srgb, var(--color-simulator) 12%, transparent), transparent 70%),
+    radial-gradient(32% 60% at 98% 0%, color-mix(in srgb, var(--color-ai) 12%, transparent), transparent 70%);
+  pointer-events: none;
+}
+
+.approaches h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  max-width: 26ch;
+}
+
+.approaches__intro {
+  margin-top: 0.75rem;
+  color: var(--color-chalk-dim);
+  max-width: 56ch;
+}
+
+.approaches__grid {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.25rem;
+}
+
+.footer {
+  border-top: 1px solid var(--color-line);
+  padding: 1.75rem clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.footer p {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  color: var(--color-chalk-dim);
+  font-size: 0.85rem;
+}
+
+.footer__byline {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+.footer__byline a {
+  color: var(--color-ball);
+  text-decoration: none;
+}
+
+.footer__byline a:hover {
+  text-decoration: underline;
+}

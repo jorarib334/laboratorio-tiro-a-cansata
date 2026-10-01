@@ -1,0 +1,47 @@
+.launch-map-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+  align-items: end;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 1.1rem;
+}
+
+.launch-map-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--color-chalk-dim);
+}
+
+.launch-map-controls input[type='number'] {
+  background: color-mix(in srgb, var(--color-void) 60%, transparent);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 4px;
+  color: var(--color-chalk);
+  font-family: var(--font-mono);
+  padding: 0.35rem 0.5rem;
+}
+
+.launch-map-controls input[type='range'] {
+  accent-color: var(--color-simulator);
+}
+
+.launch-map-controls__generate {
+  background: color-mix(in srgb, var(--color-simulator) 22%, transparent);
+  border: 1px solid var(--color-simulator);
+  color: var(--color-chalk);
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 150ms ease;
+  height: fit-content;
+}
+
+.launch-map-controls__generate:hover {
+  background: color-mix(in srgb, var(--color-simulator) 36%, transparent);
+}

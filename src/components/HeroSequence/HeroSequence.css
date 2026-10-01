@@ -1,0 +1,202 @@
+.hero-sequence {
+  position: relative;
+  height: 320vh;
+}
+
+@media (max-width: 47.9rem) {
+  .hero-sequence {
+    height: 280vh;
+  }
+}
+
+.hero-sequence__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--color-void);
+}
+
+/* Un resplandor claro que crece al final, sugiriendo que se entra en la
+   interfaz del laboratorio — sin corte brusco. */
+.hero-sequence__lab-reveal {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(65% 65% at 50% 100%, var(--color-ink), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-sequence__text {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.4rem;
+  max-width: 38rem;
+  padding: 0 clamp(1.25rem, 6vw, 5rem);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.hero-sequence__heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+}
+
+.hero-sequence__index {
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+  padding-left: 0.7rem;
+  border-left: 1px solid var(--color-line-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-chalk-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-sequence__index::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-glow-blue);
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--color-glow-blue) 80%, transparent);
+  animation: hero-index-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-index-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 30rem) {
+  .hero-sequence__index {
+    display: none;
+  }
+}
+
+.hero-sequence__text h1 {
+  margin: 0;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
+}
+
+.hero-sequence__line {
+  display: block;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: hero-line-in 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-sequence__line--1 {
+  font-size: clamp(1.5rem, 3.1vw, 2.1rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  animation-delay: 60ms;
+}
+
+.hero-sequence__line--2 {
+  font-size: clamp(1.05rem, 2.15vw, 1.45rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-chalk-dim);
+  line-height: 1.2;
+  margin-top: 0.1em;
+  animation-delay: 220ms;
+}
+
+.hero-sequence__line--accent {
+  font-size: clamp(3.4rem, 8.4vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  margin-top: 0.32em;
+  position: relative;
+  display: inline-block;
+  color: var(--color-chalk);
+  animation: hero-line-in 750ms cubic-bezier(0.16, 1, 0.3, 1) 380ms forwards;
+}
+
+/* El arco de la trayectoria como firma visual de la portada — el único
+   acento de color de todo el titular, en vez de teñir una palabra suelta. */
+.hero-sequence__accent-arc {
+  position: absolute;
+  left: -3%;
+  right: -3%;
+  bottom: -0.3em;
+  width: 106%;
+  height: 0.55em;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.hero-sequence__accent-arc path {
+  fill: none;
+  stroke: var(--color-ball);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--color-ball) 55%, transparent));
+  animation: hero-arc-draw 900ms cubic-bezier(0.16, 1, 0.3, 1) 900ms forwards;
+}
+
+@keyframes hero-line-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-arc-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-sequence__line {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-sequence__accent-arc path {
+    stroke-dashoffset: 0;
+  }
+}
+
+.hero-sequence__lead {
+  margin: 0;
+  color: var(--color-chalk-dim);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  max-width: 32ch;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
+.hero-sequence__hint {
+  position: absolute;
+  z-index: 3;
+  bottom: clamp(1.25rem, 4vh, 2.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--color-chalk-dim);
+  transition: opacity 200ms ease;
+}

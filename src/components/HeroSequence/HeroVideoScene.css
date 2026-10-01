@@ -1,0 +1,57 @@
+.hero-video-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--color-void);
+}
+
+.hero-video-scene__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  /* Un toque de contraste ayuda a que el balón y el aro (con color) se
+     impongan sobre los trazos finos blancos ya grabados en el vídeo. */
+  filter: contrast(1.05) saturate(1.05);
+}
+
+/* El vídeo trae textos y trazos finos ya grabados en el propio archivo
+   (algunos ilegibles/corruptos, artefactos del vídeo generado) que cambian
+   de posición según el instante — no hay un único punto que tapar. No se
+   pueden editar los píxeles del vídeo, así que se atenúa buena parte de la
+   mitad superior y la capa de datos real es HeroTelemetry, siempre nítida
+   y correcta. */
+.hero-video-scene__glare-mask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-ink) 30%, transparent) 0%,
+    color-mix(in srgb, var(--color-ink) 14%, transparent) 26%,
+    transparent 44%
+  );
+  pointer-events: none;
+}
+
+/* Tapa una marca de otro producto grabada en el propio vídeo (base del
+   soporte de la canasta). Posición calculada en JS (useCoverRect) porque
+   con `object-fit: cover` el recorte visible cambia con cada proporción de
+   pantalla. */
+.hero-video-scene__mask {
+  position: absolute;
+  background: var(--color-void);
+  border-radius: 12%;
+  filter: blur(14px);
+  pointer-events: none;
+}
+
+.hero-video-scene__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-ink) 55%, transparent) 0%, transparent 30%, transparent 62%, color-mix(in srgb, var(--color-ink) 80%, transparent) 100%),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-ink) 55%, transparent) 0%, transparent 38%);
+  pointer-events: none;
+}

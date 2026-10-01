@@ -1,0 +1,118 @@
+.launch-comparison {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.launch-comparison__note {
+  font-size: 0.85rem;
+  color: var(--color-chalk-dim);
+  max-width: 62ch;
+}
+
+.launch-comparison__scenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.launch-comparison__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.launch-comparison__card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.launch-comparison__card-label {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--color-simulator);
+}
+
+.launch-comparison__remove {
+  background: transparent;
+  border: 1px solid var(--color-line-strong);
+  color: var(--color-chalk-dim);
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  cursor: pointer;
+}
+
+.launch-comparison__remove:hover {
+  border-color: var(--color-ball);
+  color: var(--color-chalk);
+}
+
+.launch-comparison__scene {
+  border: 1px solid var(--color-line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--color-void) 55%, transparent);
+}
+
+.launch-comparison__card label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: var(--color-chalk-dim);
+}
+
+.launch-comparison__card input[type='range'] {
+  accent-color: var(--color-simulator);
+}
+
+.launch-comparison__add {
+  align-self: stretch;
+  min-height: 120px;
+  background: transparent;
+  border: 1px dashed var(--color-line-strong);
+  border-radius: 8px;
+  color: var(--color-chalk-dim);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.launch-comparison__add:hover {
+  border-color: var(--color-simulator);
+  color: var(--color-chalk);
+}
+
+.launch-comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.launch-comparison__table th,
+.launch-comparison__table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-line);
+  text-align: left;
+}
+
+.launch-comparison__table thead th {
+  color: var(--color-simulator);
+  font-family: var(--font-mono);
+}
+
+.launch-comparison__table tbody th {
+  color: var(--color-chalk-dim);
+  font-weight: 500;
+}
+
+.launch-comparison__table td {
+  font-family: var(--font-mono);
+  color: var(--color-chalk);
+}

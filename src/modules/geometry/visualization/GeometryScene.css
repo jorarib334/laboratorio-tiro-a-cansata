@@ -1,0 +1,26 @@
+.geometry-scene {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.geometry-scene__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.geometry-scene__panel-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-chalk-dim);
+}
+
+@media (max-width: 760px) {
+  .geometry-scene {
+    grid-template-columns: 1fr;
+  }
+}

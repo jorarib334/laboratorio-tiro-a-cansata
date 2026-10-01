@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+Icon
+Icon?
+
+# Node / React + TypeScript
+node_modules/
+dist/
+dist-ssr/
+build/
+.env
+.env.local
+*.local
+*.log
+
+# Editores
+.vscode/
+.idea/

@@ -1,0 +1,11 @@
+.efficacy-map-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.efficacy-map-panel__note {
+  font-size: 0.82rem;
+  color: var(--color-chalk-dim);
+  max-width: 60ch;
+}

@@ -1,0 +1,35 @@
+.relative-position-results__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0 0 1.1rem;
+}
+
+.relative-position-results__grid > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.relative-position-results__grid dt {
+  font-size: 0.82rem;
+  color: var(--color-chalk-dim);
+}
+
+.relative-position-results__grid dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-geometry);
+  text-align: right;
+}
+
+.relative-position-results__note {
+  font-size: 0.8rem;
+  color: var(--color-chalk-dim);
+  line-height: 1.55;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
+}

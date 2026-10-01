@@ -1,0 +1,60 @@
+.geometry-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--color-void) 55%, transparent);
+}
+
+.geometry-legend__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.geometry-legend__item dt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  color: var(--color-chalk-dim);
+}
+
+.geometry-legend__item dd {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-chalk);
+}
+
+.geometry-legend__swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+}
+
+.geometry-legend__swatch--dot {
+  border-radius: 50%;
+  background: var(--color-chalk);
+}
+
+.geometry-legend__swatch--line {
+  height: 2px;
+  align-self: center;
+  background: var(--color-chalk-dim);
+  border-top: 1px dashed var(--color-chalk-dim);
+  background: none;
+}
+
+.geometry-legend__swatch--center-line {
+  height: 2px;
+  align-self: center;
+  background: none;
+  border-top: 1.5px dashed var(--color-glow-blue);
+}

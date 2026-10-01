@@ -1,0 +1,27 @@
+.step-label {
+  --step-label-accent: var(--color-physics);
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-line);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-chalk-dim);
+}
+
+.step-label__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--step-label-accent);
+  box-shadow: 0 0 6px 1px color-mix(in srgb, var(--step-label-accent) 80%, transparent);
+}
+
+.step-label__index {
+  color: var(--step-label-accent);
+}

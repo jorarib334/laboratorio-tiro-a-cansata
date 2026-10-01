@@ -1,0 +1,19 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 50;
+  background: transparent;
+}
+
+.scroll-progress__fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--color-glow-blue), var(--color-ball));
+  box-shadow: 0 0 8px color-mix(in srgb, var(--color-ball) 60%, transparent);
+  transition: transform 120ms linear;
+}

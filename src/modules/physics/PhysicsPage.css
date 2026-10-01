@@ -1,0 +1,45 @@
+.physics-page {
+  min-height: 100svh;
+  background: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.physics-page__content {
+  padding: 3rem clamp(1.25rem, 4vw, 3rem) 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: var(--content-max);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.physics-page__lab {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(260px, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.physics-page__scene-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.physics-page__scene-frame {
+  display: flex;
+  flex-direction: column;
+}
+
+.physics-page__controls-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 860px) {
+  .physics-page__lab {
+    grid-template-columns: 1fr;
+  }
+}

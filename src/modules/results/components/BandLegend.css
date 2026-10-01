@@ -1,0 +1,35 @@
+.band-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.4rem 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+
+.band-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+}
+
+.band-legend__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.band-legend__label {
+  color: var(--color-chalk);
+  min-width: 5.5em;
+}
+
+.band-legend__range {
+  font-family: var(--font-mono);
+  color: var(--color-chalk-dim);
+  font-size: 0.74rem;
+}

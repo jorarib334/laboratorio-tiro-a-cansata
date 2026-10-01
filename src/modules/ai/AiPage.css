@@ -1,0 +1,39 @@
+.ai-page {
+  min-height: 100svh;
+  background: var(--color-ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-page__content {
+  padding: 3rem clamp(1.25rem, 4vw, 3rem) 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: var(--content-max);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.ai-page__divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ai-page__divider::before,
+.ai-page__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-ai), transparent);
+}
+
+.ai-page__divider span {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-ai);
+  white-space: nowrap;
+}

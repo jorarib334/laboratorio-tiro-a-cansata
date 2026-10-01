@@ -1,0 +1,93 @@
+:root {
+  /* Superficies: cancha en penumbra, no un negro plano genérico */
+  --color-ink: #14100d;
+  --color-wood: #241a12;
+  --color-wood-light: #33251a;
+  --color-line: rgba(244, 239, 230, 0.12);
+  --color-line-strong: rgba(244, 239, 230, 0.24);
+
+  /* Texto: blanco línea de cancha, no blanco puro */
+  --color-chalk: #f4efe6;
+  --color-chalk-dim: #b9ae9c;
+
+  /* Único acento saturado: el naranja real del balón */
+  --color-ball: #e2571c;
+  --color-ball-dim: #8a3714;
+
+  /* Luz cinematográfica del hero: azul frío + naranja del balón, nunca en texto largo */
+  --color-glow-blue: #3fa9ff;
+  --color-void: #070a10;
+
+  /* Un matiz discreto por disciplina, solo para trazos/iconos, nunca para texto largo */
+  --color-physics: #5b8cb0;
+  --color-geometry: #d9a441;
+  --color-ai: #8a8fa3;
+  --color-simulator: #4f9d84;
+  --color-technical: #6fc3d1;
+
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+
+  --content-max: 72rem;
+
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: var(--color-ink);
+  color: var(--color-chalk);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  color: var(--color-chalk);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ball);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
